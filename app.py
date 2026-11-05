@@ -1,3 +1,4 @@
+from modulos.INVENTARIO import mostrar_inventario
 # Comprobar si el usuario inició sesión
 if st.session_state["sesion_iniciada"]:
     st.sidebar.title("Menú")
@@ -19,11 +20,9 @@ if st.session_state["sesion_iniciada"]:
     if seleccion == "Ventas":
         mostrar_venta()
         
-    # Mostrar el nuevo módulo adicional
+    # Mostrar el módulo de inventario llamando a su función
     elif seleccion == "Inventario":
-        st.header("Módulo de Inventario")
-        st.write("Aquí puedes consultar el control de inventario de la tienda.")
-        # Opcional: puedes llamar a una función externa como mostrar_inventario()
+        mostrar_inventario()  # <--- LLAMADA A LA FUNCIÓN DEL MÓDULO INVENTARIO
         
     # Mostrar módulo de información
     elif seleccion == "Información":
