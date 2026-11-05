@@ -1,4 +1,14 @@
+import streamlit as st
+from modulos.login import login
+from modulos.VENTAS import mostrar_venta
 from modulos.INVENTARIO import mostrar_inventario
+
+# Inicializar variables de sesión si no existen
+if "sesion_iniciada" not in st.session_state:
+    st.session_state["sesion_iniciada"] = False
+if "usuario" not in st.session_state:
+    st.session_state["usuario"] = ""
+
 # Comprobar si el usuario inició sesión
 if st.session_state["sesion_iniciada"]:
     st.sidebar.title("Menú")
